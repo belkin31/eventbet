@@ -2,28 +2,31 @@ import { StyleSheet, View, Text, Image, Dimensions } from 'react-native';
 import PagerView from 'react-native-pager-view';
 import { DefaultButton } from '../buttons/DefaultButton';
 import { SocialRegisterList } from '../social-register/SocialRegisterList';
+import EventBus from 'react-native-event-bus'
 
-export default function PagerBanner() {
+export default function PagerBanner({...props}) {
     const dimensions = Dimensions.get('window');
     const imageHeight = Math.round(dimensions.width * 225 / 333);
     const imageWidth = dimensions.width;
+
+    const handleRegister = () => {
+      EventBus.getInstance().fireEvent("open-register-modal")
+    }
   return (
     <View style={styles.container}>
         <PagerView style={styles.container} initialPage={0}>
             <View style={styles.banner} key="1">
                 <View style={[styles.bannerInfo, {height: imageHeight, width: imageWidth}]}>
                     <View style={styles.bannerInfoTop}>
-                        <Text style={styles.bannerTitle}>Register now and Get</Text>
-                        <Text style={styles.bannerSubTitle}>$20 000</Text>
                     </View>
                     <View style={styles.bannerInfoBottom}>
-                        <View style={styles.bannerInfoButton}>
-                            <DefaultButton size='md'>
-                                <Text style={styles.bannerButtonText}>Register</Text>
-                            </DefaultButton>
-                        </View>
                         <View style={styles.bannerInfoSocial}>
                             <SocialRegisterList/>
+                        </View>
+                        <View style={styles.bannerInfoButton}>
+                            <DefaultButton size='md' onPress={handleRegister}>
+                                <Text style={styles.bannerButtonText}>Register</Text>
+                            </DefaultButton>
                         </View>
                     </View>
                 </View>
@@ -32,21 +35,16 @@ export default function PagerBanner() {
             <View style={styles.banner} key="2">
                 <View style={[styles.bannerInfo, {height: imageHeight, width: imageWidth}]}>
                     <View style={styles.bannerInfoTop}>
-                        <Text style={styles.bannerTitle}>Register now and Get</Text>
-                        <Text style={styles.bannerSubTitle}>$20 000</Text>
                     </View>
                     <View style={styles.bannerInfoBottom}>
                         <View style={styles.bannerInfoButton}>
                             <DefaultButton size='md'>
-                                <Text style={styles.bannerButtonText}>Register</Text>
+                                <Text style={styles.bannerButtonText}>Play Now</Text>
                             </DefaultButton>
-                        </View>
-                        <View style={styles.bannerInfoSocial}>
-                            <SocialRegisterList/>
                         </View>
                     </View>
                 </View>
-                <Image style={[styles.bannerImage, {height: imageHeight, width: imageWidth}]} source={require('./assets/Slide.png')}/>
+                <Image style={[styles.bannerImage, {height: imageHeight, width: imageWidth}]} source={require('./assets/Slide_2.png')}/>
             </View>
         </PagerView>
     </View>

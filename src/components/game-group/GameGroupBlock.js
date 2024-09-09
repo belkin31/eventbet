@@ -22,10 +22,10 @@ export function GameGroupBlock({...props}) {
                 showsHorizontalScrollIndicator={false}
             >
                 <View style={styles.gameScroll}>
-                    <GameCard />
-                    <GameCard />
-                    <GameCard />
-                    <GameCard />
+                    <GameCard cover={require('../../../assets/img/cover/5-Lions-Megaways 2.png')}/>
+                    <GameCard cover={require('../../../assets/img/cover/Drago-Jewels-of-fortune.png')}/>
+                    <GameCard cover={require('../../../assets/img/cover/Extra-Juıcy.png')}/>
+                    <GameCard cover={require('../../../assets/img/cover/Barn-Festival 2.png')}/>
                 </View>
             </ScrollView>
         </View>

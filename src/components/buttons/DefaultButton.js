@@ -23,8 +23,13 @@ const styles = StyleSheet.create({
         paddingVertical: 6,
         paddingHorizontal: 23,
         justifyContent: 'center',
+        alignItems: 'center',
         md: {
             paddingVertical: 10,
+            paddingHorizontal: 25
+        },
+        lg: {
+            paddingVertical: 12,
             paddingHorizontal: 25
         }
     },
@@ -34,5 +39,6 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         flexDirection: 'row',
         alignItems: 'center',
+        justifyContent: 'center'
     }
 })

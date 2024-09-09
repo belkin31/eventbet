@@ -35,6 +35,8 @@ i18n
                     home: 'Home',
                     deposit: 'Deposit',
                     profile: 'Profile',
+                    lastWinners: 'Last Winners',
+                    topWinners: 'Top Winners'
                 }
             },
             ns: ['translation'],

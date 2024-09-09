@@ -5,17 +5,29 @@ import { useState, useEffect } from 'react';
 import { routes } from './src/utills/routes';
 import { BottomBar } from './src/components/template/BottomBar/BottomBar';
 import * as Font from 'expo-font';
+import EventBus from 'react-native-event-bus'
 import { TopBar } from './src/components/template/TopBar/TopBar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import './i18n';
+import { RegisterModal } from './src/components/modals/RegisterModal';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   const [isLoadFonts, setIsLoadFonts] = useState(false);
+  const [registerModalState, setRegisterModalState] = useState(false);
+
+  const handleCloseRegisterModal = () => {
+    setRegisterModalState(!registerModalState)
+  }
 
   useEffect(() => {
     loadFonts();
+
+    EventBus.getInstance().addListener("open-register-modal", this.listener = data => {
+      console.log('test')
+      setRegisterModalState(!registerModalState)
+    })
   }, []);
   
   const loadFonts = async () => {
@@ -53,6 +65,7 @@ export default function App() {
             </Stack.Navigator>
           <TopBar/>
           <BottomBar/>
+          <RegisterModal modalVisible={registerModalState} closeModal={handleCloseRegisterModal}/>
         </NavigationContainer>
       </SafeAreaProvider>
     );

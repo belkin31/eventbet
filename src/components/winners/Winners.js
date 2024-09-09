@@ -2,8 +2,10 @@ import { StyleSheet, View, Text, Pressable, ScrollView, FlatList } from "react-n
 import { WinnersItem } from "./WinnersItem";
 import { BitcoinIcon } from "../icons/currency/BitcoinIcon"
 import { useState } from 'react';
+import {useTranslation} from "react-i18next";
 
 export function Winners ({...props}) {
+    const {t} = useTranslation()
     const [winners, setWinners] = useState([
         {
             game: {
@@ -11,21 +13,38 @@ export function Winners ({...props}) {
                 title: '5 Lions megaways',
             },
             userName: '@user23231094',
-            winnings: '0.00000345',
+            amount: '0.00000345',
             currencyIcon: BitcoinIcon
         },
-        {},
-        {},
+        {
+            game: {
+                image: require('../../../assets/img/cover/Barn-Festival 2.png'),
+                title: 'Barn Festival',
+            },
+            userName: '@user5435437',
+            amount: '0.0000067',
+            currencyIcon: BitcoinIcon
+        },
+        {
+            game: {
+                image: require('../../../assets/img/cover/Drago-Jewels-of-fortune.png'),
+                title: 'Drago Jewels Of Fortune',
+            },
+            userName: '@user5435437',
+            amount: '0.0000067',
+            currencyIcon: BitcoinIcon
+            
+        },
     ]);
 
     return (
         <View style={styles.winners}>
             <View style={styles.menuList}>
                 <Pressable style={[styles.menuPressable, styles.menuPressableActive]}>
-                    <Text style={styles.menuItem}>Top Winners</Text>
+                    <Text style={styles.menuItem}>{t('topWinners')}</Text>
                 </Pressable>
                 <Pressable style={styles.menuPressable}>
-                    <Text style={styles.menuItem}>Last</Text>
+                    <Text style={styles.menuItem}>{t('lastWinners')}</Text>
                 </Pressable>
             </View>
             <ScrollView 
@@ -40,6 +59,7 @@ export function Winners ({...props}) {
                                                         userName={item?.userName}
                                                         gameTitle={item?.game?.title}
                                                         currencyIcon={item?.currencyIcon}
+                                                        amount={item?.amount}
                                                     />)
                     }
                 </View>

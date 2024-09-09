@@ -6,6 +6,7 @@ import { PrimaryButton } from "../../buttons/PrimaryButton";
 import { SearchIcon } from "../../icons/SearchIcon";
 import {useTranslation} from "react-i18next";
 import { BlurView } from 'expo-blur';
+import EventBus from 'react-native-event-bus'
 
 const windowWidth = Dimensions.get('window').width;
 
@@ -13,7 +14,8 @@ export function TopBar({...props}) {
     const {t} = useTranslation()
     const insets = useSafeAreaInsets();
     const HandlePressSign = (event) => {
-        //
+        console.log('press')
+        EventBus.getInstance().fireEvent("open-register-modal")
     }
     const HandlePressSearch = (event) => {
         //
