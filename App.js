@@ -8,6 +8,7 @@ import * as Font from 'expo-font';
 import EventBus from 'react-native-event-bus'
 import { TopBar } from './src/components/template/TopBar/TopBar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { Text } from "react-native"
 import './i18n';
 import { RegisterModal } from './src/components/modals/RegisterModal';
 
@@ -29,7 +30,7 @@ export default function App() {
       setRegisterModalState(!registerModalState)
     })
   }, []);
-  
+
   const loadFonts = async () => {
     await Font.loadAsync({
       MontserratRegular: require('./assets/fonts/Montserrat-Regular.ttf'),
@@ -41,7 +42,7 @@ export default function App() {
       RubikBold: require('./assets/fonts/Rubik-SemiBold.ttf'),
       RubikExtraBold: require('./assets/fonts/Rubik-ExtraBold.ttf'),
     });
-    
+
     setIsLoadFonts(true)
   }
 
@@ -49,8 +50,8 @@ export default function App() {
     return (
       <SafeAreaProvider>
         <NavigationContainer>
-          
-            <Stack.Navigator 
+
+            <Stack.Navigator
               screenOptions={{
                 headerShown: false
               }}
@@ -70,7 +71,9 @@ export default function App() {
       </SafeAreaProvider>
     );
   } else {
-    return null
+    return (
+        <Text>No fonts</Text>
+    )
   }
-  
+
 }
