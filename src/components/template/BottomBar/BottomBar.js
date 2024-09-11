@@ -20,7 +20,11 @@ export function BottomBar() {
     };
     return (
       <View style={styles.container}>
-        <BlurView intensity={100} style={[styles.blurView, {paddingBottom: insets.bottom, height: 60 + insets.bottom} ]}>
+        <BlurView
+            intensity={100}
+            experimentalBlurMethod={'dimezisBlurView'}
+            style={[styles.blurView, {paddingBottom: insets.bottom, height: 60 + insets.bottom} ]}
+        >
         {routes.map((item, index) => (
             <TouchableOpacity
                 key={index}
@@ -37,7 +41,7 @@ export function BottomBar() {
         ))}
 
         </BlurView>
-        
+
       </View>
     );
 }
@@ -76,7 +80,7 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 10,
     color: '#FFFFFF',
-    
+
     fontFamily: 'MontserratBold',
   },
   icon: {

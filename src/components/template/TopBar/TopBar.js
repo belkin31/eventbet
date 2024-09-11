@@ -22,9 +22,13 @@ export function TopBar({...props}) {
     }
     return (
         <SafeAreaView style={[styles.topBarWrapper, {top: insets.top + 8}]}>
-            
+
             <View style={styles.container}>
-            <BlurView intensity={100} style={styles.blurView}>
+            <BlurView
+                experimentalBlurMethod={'dimezisBlurView'}
+                intensity={100}
+                style={styles.blurView}
+            >
                     <View style={styles.logoContain}>
                         <LogoIcon/>
                     </View>
@@ -40,10 +44,10 @@ export function TopBar({...props}) {
                             </View>
                         </PrimaryButton>
                     </View>
-            </BlurView> 
-            
+            </BlurView>
+
             </View>
-        </SafeAreaView>        
+        </SafeAreaView>
     )
 }
 
