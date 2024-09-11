@@ -48,13 +48,12 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-
+    backgroundColor: '#011C2D70',
   },
   blurView: {
     display: 'flex',
     overflow: 'hidden',
     justifyContent: 'center',
-    backgroundColor: '#011C2D70',
     alignItems: 'center',
     flexDirection: 'row',
     paddingHorizontal: 16,

@@ -53,7 +53,9 @@ export default function App() {
 
             <Stack.Navigator
               screenOptions={{
-                headerShown: false
+                headerShown: false,
+                animationTypeForReplace: 'push',
+                animation: 'fade'
               }}
             >
               {routes.map((item, index) =>  (
@@ -71,9 +73,7 @@ export default function App() {
       </SafeAreaProvider>
     );
   } else {
-    return (
-        <Text>No fonts</Text>
-    )
+    return null;
   }
 
 }

@@ -54,7 +54,6 @@ const styles = StyleSheet.create({
         right: 12,
     },
     blurView: {
-        backgroundColor: '#011C2D70',
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-between',
@@ -63,7 +62,7 @@ const styles = StyleSheet.create({
     },
     container: {
         height: 42,
-        
+        backgroundColor: '#011C2D70',
         overflow: 'hidden',
         borderRadius: 8,
     },
