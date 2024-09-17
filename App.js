@@ -48,7 +48,7 @@ export default function App() {
 
   if(Boolean(isLoadFonts && routes?.length)) {
     return (
-      <SafeAreaProvider>
+      <SafeAreaProvider style={{backgroundColor: '#031329'}}>
         <NavigationContainer>
 
             <Stack.Navigator
