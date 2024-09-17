@@ -22,7 +22,7 @@ export function TopBar({...props}) {
     }
     return (
         <SafeAreaView style={[styles.topBarWrapper, {top: insets.top + 8}]}>
-            
+
             <View style={styles.container}>
             <View 
                 style={styles.blurView} 
@@ -45,7 +45,7 @@ export function TopBar({...props}) {
             </View> 
             
             </View>
-        </SafeAreaView>        
+        </SafeAreaView>
     )
 }
 

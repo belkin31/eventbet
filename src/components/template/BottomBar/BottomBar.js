@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 10,
     color: '#FFFFFF',
-    
+
     fontFamily: 'MontserratBold',
   },
   icon: {
