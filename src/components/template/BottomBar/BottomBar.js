@@ -20,7 +20,9 @@ export function BottomBar() {
     };
     return (
       <View style={styles.container}>
-        <BlurView intensity={100} style={[styles.blurView, {paddingBottom: insets.bottom, height: 60 + insets.bottom} ]}>
+        <View 
+          style={[styles.blurView, {paddingBottom: insets.bottom, height: 60 + insets.bottom} ]}
+        >
         {routes.map((item, index) => (
             <TouchableOpacity
                 key={index}
@@ -36,7 +38,7 @@ export function BottomBar() {
             </TouchableOpacity>
         ))}
 
-        </BlurView>
+        </View>
         
       </View>
     );
@@ -48,7 +50,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    backgroundColor: '#011C2D70',
+    backgroundColor: '#011C2D',
   },
   blurView: {
     display: 'flex',

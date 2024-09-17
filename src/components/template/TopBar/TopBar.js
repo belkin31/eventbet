@@ -24,7 +24,9 @@ export function TopBar({...props}) {
         <SafeAreaView style={[styles.topBarWrapper, {top: insets.top + 8}]}>
             
             <View style={styles.container}>
-            <BlurView intensity={100} style={styles.blurView}>
+            <View 
+                style={styles.blurView} 
+            >
                     <View style={styles.logoContain}>
                         <LogoIcon/>
                     </View>
@@ -40,7 +42,7 @@ export function TopBar({...props}) {
                             </View>
                         </PrimaryButton>
                     </View>
-            </BlurView> 
+            </View> 
             
             </View>
         </SafeAreaView>        
@@ -62,7 +64,7 @@ const styles = StyleSheet.create({
     },
     container: {
         height: 42,
-        backgroundColor: '#011C2D70',
+        backgroundColor: '#011C2D',
         overflow: 'hidden',
         borderRadius: 8,
     },
