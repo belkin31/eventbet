@@ -9,6 +9,9 @@
       "backgroundColor": "#031329",
       "translucent": false
     },
+    "androidNavigationBar": {
+      "backgroundColor": "#031329"
+    },
     "userInterfaceStyle": "dark",
     "splash": {
       "image": "./assets/splash.png",
