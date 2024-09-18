@@ -50,11 +50,11 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    backgroundColor: '#011C2D',
   },
   blurView: {
     display: 'flex',
     overflow: 'hidden',
+    backgroundColor: '#011C2D',
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
