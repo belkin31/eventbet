@@ -3,41 +3,43 @@ import { CasinoIcon } from '../components/icons/CasinoIcon';
 import { HomeIcon } from '../components/icons/HomeIcon';
 import { CashierIcon } from '../components/icons/CashierIcon';
 import { ProfileIcon } from '../components/icons/ProfileIcon';
+import { PromotionIcon } from '../components/icons/PromotionIcon';
 
 import { HomeScreen } from '../screens/HomeScreen';
 import { CasinoScreen } from '../screens/CasinoScreen';
 import { ChatScreen } from '../screens/ChatScreen';
 import { ProfileScreen } from '../screens/ProfileScreen';
-import { CashierScreen } from '../screens/CashierScreen';
+import { PromotionScreen } from '../screens/PromotionScreen';
 
 export const routes = [
     {
         router: 'chat',
-        label: 'chat',
+        label: 'Chat',
         icon: ChatIcon,
         component: ChatScreen,
       },
       {
         router: 'casino',
-        label: 'casino',
+        label: 'Casino',
         icon: CasinoIcon,
         component: CasinoScreen,
       },
       {
         router: 'home',
-        label: 'home',
+        label: 'Home',
+        initial: true,
         icon: HomeIcon,
         component: HomeScreen,
       },
       {
-        router: 'deposit',
-        label: 'deposit',
-        icon: CashierIcon,
-        component: CashierScreen,
+        router: 'promotion',
+        label: 'Promo',
+        icon: PromotionIcon,
+        component: PromotionScreen,
       },
       {
         router: 'profile',
-        label: 'profile',
+        label: 'Profile',
         icon: ProfileIcon,
         component: ProfileScreen,
       },

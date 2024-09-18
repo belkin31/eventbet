@@ -1,17 +1,28 @@
 import React, { useState } from 'react';
 import { Text, View, StyleSheet, Button, SafeAreaView, TouchableOpacity } from 'react-native';
 
-import { BlurView } from 'expo-blur';
+//import { BlurView } from 'expo-blur';
 import { useNavigation } from '@react-navigation/native';
 import { routes } from '../../../utills/routes';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import {useTranslation} from "react-i18next";
 
-export function BottomBar() {
+export function BottomBar({...props}) {
     const {t} = useTranslation()
     const navigation = useNavigation();
     const insets = useSafeAreaInsets();
-    const [activeTabIndex, setactiveTabIndex] = useState(0);
+
+    const initialRouteIndex = () => {
+      if (props?.initialRouteName) {
+        return routes.findIndex((route, index) => {
+          if (route.router === props?.initialRouteName) {
+            return index;
+          }
+        })
+      }
+    }
+
+    const [activeTabIndex, setactiveTabIndex] = useState(initialRouteIndex() || 0);
 
 
     const clickItem = (router, index) => {

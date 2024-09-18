@@ -37,7 +37,6 @@ const styles = StyleSheet.create({
     },
     title: {
         flexDirection: 'row',
-        marginHorizontal: 8,
         gap: 8,
         alignItems: 'center'
     },
@@ -56,7 +55,6 @@ const styles = StyleSheet.create({
         borderRadius: 8,
     },
     scrollView: {
-        paddingHorizontal: 8,
     },
     gameScroll: {
         gap: 8,

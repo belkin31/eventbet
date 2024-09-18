@@ -1,11 +1,12 @@
 import { View, StyleSheet, Dimensions, SafeAreaView, Text } from "react-native"
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { LogoIcon } from "../../icons/LogoIcon";
+import { ProfileIcon } from "../../icons/ProfileIcon";
 import { DefaultButton } from "../../buttons/DefaultButton";
 import { PrimaryButton } from "../../buttons/PrimaryButton";
 import { SearchIcon } from "../../icons/SearchIcon";
 import {useTranslation} from "react-i18next";
-import { BlurView } from 'expo-blur';
+//import { BlurView } from 'expo-blur';
 import EventBus from 'react-native-event-bus'
 
 const windowWidth = Dimensions.get('window').width;
@@ -14,7 +15,6 @@ export function TopBar({...props}) {
     const {t} = useTranslation()
     const insets = useSafeAreaInsets();
     const HandlePressSign = (event) => {
-        console.log('press')
         EventBus.getInstance().fireEvent("open-register-modal")
     }
     const HandlePressSearch = (event) => {
@@ -33,9 +33,14 @@ export function TopBar({...props}) {
                     <View style={styles.userContain}>
                         <DefaultButton onPress={HandlePressSign}>
                             <Text style={styles.buttonText}>
-                                {t('signIn')}
+                                324.2$
                             </Text>
                         </DefaultButton>
+                        <PrimaryButton onPress={HandlePressSearch}>
+                            <View style={styles.iconContain}>
+                                <ProfileIcon/>
+                            </View>
+                        </PrimaryButton>
                         <PrimaryButton onPress={HandlePressSearch}>
                             <View style={styles.iconContain}>
                                 <SearchIcon/>
@@ -74,8 +79,8 @@ const styles = StyleSheet.create({
         paddingHorizontal: 8,
     },
     iconContain: {
-        width: 12,
-        height: 12,
+        width: 13,
+        height: 13,
         justifyContent: 'center',
         alignItems: 'center',
     },

@@ -3,7 +3,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-export function CashierScreen ({...props}) {
+export function PromotionScreen ({...props}) {
     const insets = useSafeAreaInsets();
     return (
         <ScrollView

@@ -21,7 +21,6 @@ const styles = StyleSheet.create({
     searchBar: {
         flexDirection: 'row',
         gap: 8,
-        paddingHorizontal: 8,
     },
     searchIcon: {
         width: 12,

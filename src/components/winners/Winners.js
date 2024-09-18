@@ -72,7 +72,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#011C2D',
         borderRadius: 8,
         gap: 8,
-        marginHorizontal: 8,
         paddingVertical: 8,
     },
     menuList: {

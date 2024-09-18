@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
     },
     screenBlock: {
         gap: 16,
+        paddingHorizontal: 12,
     },
     ScrollView: {
         backgroundColor: '#031329',

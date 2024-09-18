@@ -46,16 +46,25 @@ export default function App() {
     setIsLoadFonts(true)
   }
 
+  const initialRoute = () => {
+    return routes.find((route) => {
+      return route.initial;
+    })
+  };
+
+
   if(Boolean(isLoadFonts && routes?.length)) {
     return (
       <SafeAreaProvider style={{backgroundColor: '#031329'}}>
         <NavigationContainer>
 
             <Stack.Navigator
+              initialRouteName={initialRoute().router}
               screenOptions={{
                 headerShown: false,
                 animationTypeForReplace: 'push',
-                animation: 'fade'
+                animation: 'fade',
+                animationDuration: 200,
               }}
             >
               {routes.map((item, index) =>  (
@@ -67,7 +76,7 @@ export default function App() {
               ))}
             </Stack.Navigator>
           <TopBar/>
-          <BottomBar/>
+          <BottomBar initialRouteName={initialRoute().router}/>
           <RegisterModal modalVisible={registerModalState} closeModal={handleCloseRegisterModal}/>
         </NavigationContainer>
       </SafeAreaProvider>
