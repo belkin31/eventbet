@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
   arrowIcon: {
     width: 16,
     height: 16,
-    opacity: '0.2'
+    opacity: 0.2,
   },
   navigateItem: {
     alignItems: 'center',
