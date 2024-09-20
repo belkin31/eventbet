@@ -1,4 +1,4 @@
-import { Text, SafeAreaView, StyleSheet, Pressable, View, TouchableOpacity } from 'react-native';
+import { Text, SafeAreaView, StyleSheet, View, TouchableOpacity } from 'react-native';
 import { ArrowIcon } from '../icons/ArrowIcon';
 export function ScreenMenu({...props}) {
 
@@ -6,32 +6,31 @@ export function ScreenMenu({...props}) {
     if(icon) {
       return icon()
     }
-    
   }
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.navigateView}>
-              {props.navigateItem?.map((item, index) => (
-              <View key={index} intensity={100} style={[styles.navigateItems, (index === 0) && styles.noBorder]}>
-                  <TouchableOpacity onPress={item.action} style={styles.pressable}>
-                    <View style={styles.navigateContain}>
-                        <View style={styles.icon}>{GetIcon(item?.icon)}</View>
-                        <Text style={styles.navigateItemText}>{item.label}</Text>
-                    </View>  
-                    <View style={styles.switch}>
-                        {item?.switch && 
-                            <Text style={styles.switchText}>{item?.switch}</Text>
-                        }
-                        <View style={styles.arrowIcon}>
-                        <ArrowIcon/>
+      <SafeAreaView style={styles.container}>
+        <View style={styles.navigateView}>
+          {props.navigateItem?.map((item, index) => (
+              <View key={index} intensity={100} style={styles.navigateItems}>
+                <TouchableOpacity onPress={item.action} style={styles.pressable}>
+                  <View style={styles.navigateContain}>
+                    <View style={styles.icon}>{GetIcon(item?.icon)}</View>
+                    <Text style={styles.navigateItemText}>{item.label}</Text>
+                  </View>
+                  <View style={styles.switch}>
+                    {item?.switch &&
+                        <Text style={styles.switchText}>{item?.switch}</Text>
+                    }
+                    <View style={styles.arrowIcon}>
+                      <ArrowIcon/>
                     </View>
-                    </View>
-                    
-                  </TouchableOpacity>
+                  </View>
+
+                </TouchableOpacity>
               </View>
-              ))}
-            </View>
-    </SafeAreaView>
+          ))}
+        </View>
+      </SafeAreaView>
   );
 }
 
