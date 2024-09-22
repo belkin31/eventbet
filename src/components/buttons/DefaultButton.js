@@ -34,6 +34,9 @@ const styles = StyleSheet.create({
             paddingHorizontal: 25
         }
     },
+    background: {
+        flexGrow: 1,
+    },
     container: {
         flexDirection: 'row',
         alignItems: 'stretch',

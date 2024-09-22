@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#173243',
         borderRadius: 8,
         padding: 12,
+        flex: 1,
         justifyContent: 'center'
     },
 })

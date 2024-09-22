@@ -31,21 +31,31 @@ export function TopBar({...props}) {
                         <LogoIcon/>
                     </View>
                     <View style={styles.userContain}>
-                        <DefaultButton onPress={HandlePressSign}>
-                            <Text style={styles.buttonText}>
-                                324.2$
-                            </Text>
-                        </DefaultButton>
-                        <PrimaryButton onPress={HandlePressSearch}>
-                            <View style={styles.iconContain}>
-                                <ProfileIcon/>
+                        <View>
+                            <DefaultButton onPress={HandlePressSign}>
+                                <Text style={styles.buttonText}>
+                                    324.2$
+                                </Text>
+                            </DefaultButton>
+                        </View>
+                        <View style={styles.buttonContain}>
+                            <PrimaryButton onPress={HandlePressSearch}>
+                                <View style={styles.iconContain}>
+                                    <ProfileIcon/>
+                                </View>
+                            </PrimaryButton>
+                            <View style={styles.counter}>
+                                <Text style={styles.counterText}>2</Text>
                             </View>
-                        </PrimaryButton>
-                        <PrimaryButton onPress={HandlePressSearch}>
-                            <View style={styles.iconContain}>
-                                <SearchIcon/>
-                            </View>
-                        </PrimaryButton>
+                        </View>
+                        <View>
+                            <PrimaryButton onPress={HandlePressSearch}>
+                                <View style={styles.iconContain}>
+                                    <SearchIcon/>
+                                </View>
+                            </PrimaryButton>
+                        </View>
+                        
                     </View>
             </View> 
             
@@ -65,6 +75,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         padding: 8,
+        overflow: 'hidden',
         alignItems: 'center'
     },
     container: {
@@ -72,6 +83,27 @@ const styles = StyleSheet.create({
         backgroundColor: '#011C2D',
         overflow: 'hidden',
         borderRadius: 8,
+    },
+    buttonContain: {
+        position: 'relative',
+        height: 32,
+    },
+    counter: {
+        position: 'absolute',
+        width: 11,
+        height: 11,
+        backgroundColor: '#25E39A',
+        top: -1,
+        borderRadius: 11,
+        right: -1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingHorizontal: 4,
+    },
+    counterText: {
+        fontFamily: 'MontserratBold',
+        fontSize: 7,
+        color: '#FFFFFF',
     },
     logoContain: {
         width: 94,
@@ -84,6 +116,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
+    
     buttonText: {
         fontFamily: 'MontserratBold',
         color: '#FFFFFF',
