@@ -23,8 +23,8 @@ const styles = StyleSheet.create({
         gap: 8,
     },
     searchIcon: {
-        width: 12,
-        height: 12
+        width: 16,
+        height: 16
     },
     searchLabel: {
         fontFamily: 'MontserratBold',
