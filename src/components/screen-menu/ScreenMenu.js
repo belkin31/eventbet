@@ -14,9 +14,11 @@ export function ScreenMenu({...props}) {
               <View key={index} intensity={100} style={styles.navigateItems}>
                 <TouchableOpacity onPress={item.action} style={styles.pressable}>
                   <View style={styles.navigateContain}>
-                    <View style={styles.iconContain}>
-                      <View style={styles.icon}>{GetIcon(item?.icon)}</View>
-                    </View>
+                    {item?.icon && 
+                      <View style={styles.iconContain}>
+                        <View style={styles.icon}>{GetIcon(item?.icon)}</View>
+                      </View>
+                    }
                     <Text style={styles.navigateItemText}>{item.label}</Text>
                   </View>
                   <View style={styles.switch}>

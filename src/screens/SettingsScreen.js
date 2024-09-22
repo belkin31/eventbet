@@ -9,7 +9,7 @@ import { NotificationIcon } from "../components/icons/NotificationIcon";
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-export function ProfileScreen ({...props}) {
+export function SettingsScreen ({...props}) {
     const insets = useSafeAreaInsets();
     return (
         <ScrollView
@@ -20,25 +20,25 @@ export function ProfileScreen ({...props}) {
         >
         <View style={[styles.container, {paddingTop: insets.top + 66}]}>
             <View style={styles.screenBlock}>
-                <Text style={styles.screenTitle}>Profile settings</Text>
+                <Text style={styles.screenTitle}>Personal settings</Text>
                 <SingleBanner/>
                 <View style={styles.block}>
                     <Text style={styles.blockTitle}>Profile</Text>
                     <ScreenMenu navigateItem={[
                         {
-                        icon: PersonalInfoIcon,
-                        label: 'Personal Info',
-                        action: () => {},
+                            icon: PersonalInfoIcon,
+                            label: 'Personal Info',
+                            action: () => {},
                         },
                         {
-                        icon: VerificationIcon,
-                        label: 'Verification',
-                        action: () => {},
+                            icon: VerificationIcon,
+                            label: 'Verification',
+                            action: () => {},
                         },
                         {
-                        icon: SecurityIcon,
-                        label: 'Security',
-                        action: () => {},
+                            icon: SecurityIcon,
+                            label: 'Security',
+                            action: () => {},
                         },
                     ]}/>
                 </View>
@@ -50,6 +50,23 @@ export function ProfileScreen ({...props}) {
                         label: 'Notification',
                         action: () => {},
                         switch: 'Off'
+                        },
+                    ]}/>
+                </View>
+                <View style={styles.block}>
+                    <Text style={styles.blockTitle}>Info</Text>
+                    <ScreenMenu navigateItem={[
+                        {
+                            label: 'About us',
+                            action: () => {},
+                        },
+                        {
+                            label: 'FAQ',
+                            action: () => {},
+                        },
+                        {
+                            label: 'Terms & Conditions',
+                            action: () => {},
                         },
                     ]}/>
                 </View>

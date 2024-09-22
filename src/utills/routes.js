@@ -2,19 +2,20 @@ import { ChatIcon } from '../components/icons/ChatIcon';
 import { CasinoIcon } from '../components/icons/CasinoIcon';
 import { HomeIcon } from '../components/icons/HomeIcon';
 import { CashierIcon } from '../components/icons/CashierIcon';
+import { SettingsIcon } from '../components/icons/SettingsIcon';
 import { ProfileIcon } from '../components/icons/ProfileIcon';
 import { PromotionIcon } from '../components/icons/PromotionIcon';
 
 import { HomeScreen } from '../screens/HomeScreen';
 import { CasinoScreen } from '../screens/CasinoScreen';
 import { ChatScreen } from '../screens/ChatScreen';
-import { ProfileScreen } from '../screens/ProfileScreen';
+import { SettingsScreen } from '../screens/SettingsScreen';
 import { PromotionScreen } from '../screens/PromotionScreen';
 
 export const routes = [
     {
         router: 'chat',
-        label: 'Chat',
+        label: 'Support',
         icon: ChatIcon,
         component: ChatScreen,
       },
@@ -38,9 +39,9 @@ export const routes = [
         component: PromotionScreen,
       },
       {
-        router: 'profile',
-        label: 'Profile',
-        icon: ProfileIcon,
-        component: ProfileScreen,
+        router: 'settings',
+        label: 'Settings',
+        icon: SettingsIcon,
+        component: SettingsScreen,
       },
 ]

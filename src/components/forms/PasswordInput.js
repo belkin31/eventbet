@@ -55,8 +55,8 @@ const styles =  StyleSheet.create({
         alignItems: 'center',
     },
     showPassword: {
-        width: 14,
-        height: 14,
+        width: 16,
+        height: 16,
         right: 16,
         position: 'absolute'
     }
