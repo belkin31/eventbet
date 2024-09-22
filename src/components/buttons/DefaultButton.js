@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet } from "react-native"
+import { Pressable, StyleSheet, View } from "react-native"
 import { LinearGradient } from 'expo-linear-gradient';
 export function DefaultButton ({...props}) {
 
@@ -7,15 +7,16 @@ export function DefaultButton ({...props}) {
     }
 
     return (
-        <LinearGradient
-            colors={['#21CC51', '#166E55']}
-            style={styles.background}
-        >
-            <Pressable onPress={HandlePress} style={[styles.defaultButton, styles.defaultButton[props?.size]]}>
-                {props.children}
-            </Pressable>
-        </LinearGradient>
-
+        <View style={styles.container}>
+            <LinearGradient
+                colors={['#21CC51', '#166E55']}
+                style={styles.background}
+            >
+                <Pressable onPress={HandlePress} style={[styles.defaultButton, styles.defaultButton[props?.size]]}>
+                    {props.children}
+                </Pressable>
+            </LinearGradient>
+        </View>
     )
 }
 const styles = StyleSheet.create({
@@ -33,12 +34,15 @@ const styles = StyleSheet.create({
             paddingHorizontal: 25
         }
     },
-    background: {
+    container: {
+        flexDirection: 'row',
+        alignItems: 'stretch',
+        justifyContent: 'center',
         borderWidth: 1,
         borderColor: '#25E39A',
         borderRadius: 8,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center'
+        overflow: 'hidden',
+        pointerEvents: 'box-none',
+        backgroundColor: 'transparent',
     }
 })

@@ -14,7 +14,9 @@ export function ScreenMenu({...props}) {
               <View key={index} intensity={100} style={styles.navigateItems}>
                 <TouchableOpacity onPress={item.action} style={styles.pressable}>
                   <View style={styles.navigateContain}>
-                    <View style={styles.icon}>{GetIcon(item?.icon)}</View>
+                    <View style={styles.iconContain}>
+                      <View style={styles.icon}>{GetIcon(item?.icon)}</View>
+                    </View>
                     <Text style={styles.navigateItemText}>{item.label}</Text>
                   </View>
                   <View style={styles.switch}>
@@ -38,8 +40,17 @@ const styles = StyleSheet.create({
   container: {
   },
   icon: {
+    width: 16,
+    height: 16,
+    overflow: 'visible'
+  },
+  iconContain: {
     width: 21,
     height: 21,
+    position: 'relative',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
   },
   navigateView: {
     borderRadius: 8,
@@ -68,7 +79,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 16,
     overflow: 'hidden',
-
   },
   navigateContain: {
     flex: 1,

@@ -10,7 +10,7 @@ export function SearchBar({...props}) {
                 </View>
                 <Text style={styles.searchLabel}>Search for Game</Text>
             </View>
-            <DefaultButton>
+            <DefaultButton size={'md'}>
                     <Text style={styles.buttonText}>Search</Text>
             </DefaultButton>
         </View>
@@ -45,5 +45,5 @@ const styles = StyleSheet.create({
         fontFamily: 'MontserratBold',
         color: '#FFFFFF',
         fontSize: 12,
-    }
+    },
 })

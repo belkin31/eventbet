@@ -79,8 +79,8 @@ const styles = StyleSheet.create({
         paddingHorizontal: 8,
     },
     iconContain: {
-        width: 13,
-        height: 13,
+        width: 16,
+        height: 16,
         justifyContent: 'center',
         alignItems: 'center',
     },
