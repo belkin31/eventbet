@@ -17,8 +17,8 @@ export function GameGroupBlock({...props}) {
                 <SearchBar/>
             }
             <ScrollView 
-                style={styles.scrollView}
                 horizontal
+                alwaysBounceHorizontal
                 showsHorizontalScrollIndicator={false}
             >
                 <View style={styles.gameScroll}>
@@ -53,8 +53,6 @@ const styles = StyleSheet.create({
         padding: 5,
         backgroundColor: '#25E39A',
         borderRadius: 8,
-    },
-    scrollView: {
     },
     gameScroll: {
         gap: 8,

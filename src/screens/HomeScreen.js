@@ -12,18 +12,18 @@ export function HomeScreen ({...props}) {
         <ScrollView
             showsHorizontalScrollIndicator={false}
             showsVerticalScrollIndicator={false}
-            style={styles.ScrollView}
-            >
-        <View style={[styles.container, {paddingTop: insets.top + 66, paddingBottom: insets.bottom + 100}]}>
+            style={styles.scrollView}
+            alwaysBounceVertical
+        >
+            <View style={[styles.container, {paddingTop: insets.top + 66, paddingBottom: insets.bottom + 100}]}>
                 <PagerBanner/>
                 <View style={styles.screenBlock}>
                     <Winners/>
                     <GameGroupBlock searchIsShow/>
                     <GameGroupBlock/>
                 </View>
-        </View>
+            </View>
         </ScrollView>
-       
     )
 }
 
@@ -35,8 +35,9 @@ const styles = StyleSheet.create({
         gap: 16,
         paddingHorizontal: 12,
     },
-    ScrollView: {
+    scrollView: {
         backgroundColor: '#031329',
         marginHorizontal: 0,
+        height: windowHeight,
     }
 })

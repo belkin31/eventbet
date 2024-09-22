@@ -26,7 +26,7 @@ export function RegisterModal({closeModal, ...props}) {
         >
             <BlurView style={styles.modalView} intensity={4}>
                 <KeyboardAvoidingView behavior='position'>
-                    <View style={[styles.modalContain, {paddingBottom: insets.bottom}]}>
+                    <View style={[styles.modalContain, {paddingBottom: 30 + insets.bottom}]}>
                         <View style={styles.modalHead}>
                             <Pressable style={styles.modalClose} onPress={HandleCloseModal}>
                                 <CrossIcon/>

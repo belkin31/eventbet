@@ -7,9 +7,10 @@ export function ChatScreen ({...props}) {
     const insets = useSafeAreaInsets();
     return (
         <ScrollView
-        showsHorizontalScrollIndicator={false}
-        showsVerticalScrollIndicator={false}
-        style={styles.ScrollView}
+            showsHorizontalScrollIndicator={false}
+            showsVerticalScrollIndicator={false}
+            alwaysBounceVertical
+            style={styles.ScrollView}
         >
         <View style={[styles.container, {paddingTop: insets.top + 66}]}>
         </View>

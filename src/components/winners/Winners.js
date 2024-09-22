@@ -49,6 +49,7 @@ export function Winners ({...props}) {
             </View>
             <ScrollView 
                 horizontal
+                alwaysBounceHorizontal
                 showsHorizontalScrollIndicator={false}
             >
                 <View style={styles.scrollWinners}>

@@ -26,7 +26,6 @@ export default function App() {
     loadFonts();
 
     EventBus.getInstance().addListener("open-register-modal", this.listener = data => {
-      console.log('test')
       setRegisterModalState(!registerModalState)
     })
   }, []);

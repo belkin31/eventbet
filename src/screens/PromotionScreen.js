@@ -7,9 +7,10 @@ export function PromotionScreen ({...props}) {
     const insets = useSafeAreaInsets();
     return (
         <ScrollView
-        showsHorizontalScrollIndicator={false}
-        showsVerticalScrollIndicator={false}
-        style={styles.ScrollView}
+            showsHorizontalScrollIndicator={false}
+            showsVerticalScrollIndicator={false}
+            alwaysBounceVertical
+            style={styles.scrollView}
         >
         <View style={[styles.container, {paddingTop: insets.top + 66}]}>
         </View>
@@ -25,7 +26,7 @@ const styles = StyleSheet.create({
     screenBlock: {
         paddingHorizontal: 16
     },
-    ScrollView: {
+    scrollView: {
         backgroundColor: '#031329',
         marginHorizontal: 0,
     }
